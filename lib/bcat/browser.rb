@@ -4,6 +4,7 @@ class Bcat
       case `uname`
       when /Darwin/       ; 'Darwin'
       when /Linux/, /BSD/ ; 'X11'
+      when /CYGWIN/       ; 'Cygwin'
       else                  'X11'
       end
 
@@ -26,6 +27,11 @@ class Bcat
         'chromium'    => "chromium",
         'mozilla'     => "mozilla",
         'epiphany'    => "epiphany",
+        'curl'        => "curl -s"
+      },
+
+      'Cygwin' => {
+        'default'     => "cygstart",
         'curl'        => "curl -s"
       }
     }
